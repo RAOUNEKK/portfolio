@@ -1,0 +1,4 @@
+- [x] Apply the Orchid Mist, Wisteria Blue, Mint Cream, Tan, and Lime Cream palette without purple dominance
+- [x] Remove the homepage eyebrow, statistics, floating cards, and technology ticker
+- [x] Add the scroll-growing “Harizi Raounek Nour El Yakine” sequence
+- [ ] Validate the homepage on desktop and mobile
