@@ -2,6 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 
 const recipient = "yakinhrz@gmail.com";
 
+// Resend refuses to send from free-mail addresses (gmail.com, outlook.com...) because you
+// can't verify those domains. Without your own verified domain, the only sender Resend
+// accepts is its shared test address, which can deliver to the email of your Resend account.
+const sharedSender = "Raounek Portfolio <onboarding@resend.dev>";
+const freeMailDomains = /@(gmail|googlemail|yahoo|hotmail|outlook|live|icloud|proton|protonmail)\./i;
+
 export const Route = createFileRoute("/api/contact")({
   server: {
     handlers: {
@@ -33,8 +39,9 @@ export const Route = createFileRoute("/api/contact")({
         }
 
         const apiKey = process.env.RESEND_API_KEY;
-        const from = process.env.RESEND_FROM_EMAIL;
-        if (!apiKey || !from) {
+        const configuredFrom = process.env.RESEND_FROM_EMAIL?.trim();
+        const from = configuredFrom && !freeMailDomains.test(configuredFrom) ? configuredFrom : sharedSender;
+        if (!apiKey) {
           return Response.json(
             { error: "The contact form is not configured yet. Please email me directly at yakinhrz@gmail.com." },
             { status: 503 },
@@ -58,6 +65,8 @@ export const Route = createFileRoute("/api/contact")({
           });
 
           if (!response.ok) {
+            // Visible in your server / Vercel function logs so the real reason is never hidden.
+            console.error("[contact] Resend rejected the email:", response.status, await response.text());
             return Response.json(
               { error: "Your message could not be sent right now. Please email me directly at yakinhrz@gmail.com." },
               { status: 502 },
@@ -65,7 +74,8 @@ export const Route = createFileRoute("/api/contact")({
           }
 
           return Response.json({ success: true });
-        } catch {
+        } catch (err) {
+          console.error("[contact] Network error calling Resend:", err);
           return Response.json(
             { error: "A network error occurred. Please email me directly at yakinhrz@gmail.com." },
             { status: 502 },

@@ -119,7 +119,12 @@ function Contact() {
               {sent ? <><Check size={17}/> Message sent</> : sending ? "Sending…" : <><Send size={17}/> Send message</>}
             </button>
             {sent && <p className="contact-form-status" role="status">Thanks! Your message has been sent successfully.</p>}
-            {error && <p className="contact-form-status contact-form-error" role="alert">{error}</p>}
+            {error && (<p className="contact-form-status contact-form-error" role="alert">
+              {error}{" "}
+              <a href={`mailto:${site.email}?subject=${encodeURIComponent(`Portfolio message from ${form.name || "a visitor"}`)}&body=${encodeURIComponent(form.message)}`}>
+                Open it in your email app instead →
+              </a>
+            </p>)}
           </form>
         </section>
 
