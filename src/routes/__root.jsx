@@ -111,6 +111,7 @@ export const Route = createRootRouteWithContext()({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "google", content: "notranslate" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -118,11 +119,11 @@ export const Route = createRootRouteWithContext()({
     ],
   }),
   shellComponent: ({ children }) => (
-    <html lang="en">
+    <html lang="en" translate="no">
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body translate="no">
         {children}
         <Scripts />
       </body>
