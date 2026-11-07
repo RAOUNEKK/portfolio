@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Code2, Database, Palette, Shield, Terminal, Wrench } from "lucide-react";
+import { Code2, Database, Palette, Server, Shield, Terminal, Wrench } from "lucide-react";
 import { PageHeader, PageShell } from "@/components/page";
 export const Route = createFileRoute("/skills")({
   head: () => ({
@@ -15,19 +15,31 @@ const groups = [
     Shield,
     "01",
     "Cybersecurity",
-    ["Web security", "Linux", "Cryptography", "Network security"],
+    ["Web security", "Pentesting", "Linux", "Cryptography", "Network Security"],
   ],
-  [Code2, "02", "Web", ["HTML", "CSS", "JavaScript", "React", "TypeScript"]],
-  [Terminal, "03", "Programming", ["Python", "Java", "C"]],
+  [
+    Code2,
+    "02",
+    "Frontend",
+    ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Tailwind CSS"],
+  ],
+  [Server, "03", "Backend", ["Node.js", "Express.js", "REST APIs", "JWT auth"]],
+  [Terminal, "04", "Programming", ["Python", "Java", "C", "SQL"]],
   [
     Palette,
-    "04",
+    "05",
     "UI / UX",
     ["Figma", "Visual design", "Prototyping", "Product thinking"],
   ],
-  [Database, "05", "Data & systems", ["PostgreSQL", "SQL", "NoSQL","REST","MongoDb"]],
-  [Wrench, "06", "Tools", ["Git", "GitHub", "VS Code", "Docker", "Android tooling"]],
+  [
+    Database,
+    "06",
+    "Data & systems",
+    ["PostgreSQL", "MongoDB", "SQL", "APIs"],
+  ],
+  [Wrench, "07", "Tools", ["Git", "GitHub", "VS Code", "Docker", "Android tooling"]],
 ];
+
 function Skills() {
   return (
     <>
@@ -38,7 +50,7 @@ function Skills() {
             My <em>skills.</em>
           </>
         }
-        subtitle=""
+        subtitle="A snapshot of the areas I’m actively building competence in — not a claim that I know everything."
       />
       <PageShell>
         <div className="skills-grid reveal">

@@ -1171,10 +1171,13 @@ img {
     background 0.25s ease;
 }
 .skills-grid article:nth-child(2),
-.skills-grid article:nth-child(5) {
+.skills-grid article:nth-child(6) {
   background: var(--lav-light);
 }
-.skills-grid article:nth-child(3) {
+.skills-grid article:last-child {
+  grid-column: 1 / -1;
+}
+.skills-grid article:nth-child(4) {
   background: var(--black);
   color: #fff;
 }
@@ -1194,7 +1197,7 @@ img {
   width: 24px;
   height: 24px;
 }
-.skills-grid article:nth-child(3) .skill-top svg {
+.skills-grid article:nth-child(4) .skill-top svg {
   color: var(--lav);
 }
 .skills-grid h2 {
@@ -1207,7 +1210,7 @@ img {
   flex-wrap: wrap;
   gap: 7px;
 }
-.skills-grid article:nth-child(3) .skill-tags span {
+.skills-grid article:nth-child(4) .skill-tags span {
   background: #191919;
   border-color: #444;
   color: #ddd;
@@ -1218,7 +1221,7 @@ img {
   margin-top: 32px;
   overflow: hidden;
 }
-.skills-grid article:nth-child(3) .skill-line {
+.skills-grid article:nth-child(4) .skill-line {
   background: #333;
 }
 .skill-line i {
@@ -1232,15 +1235,18 @@ img {
   width: 86%;
 }
 .skills-grid article:nth-child(3) .skill-line i {
-  width: 63%;
+  width: 70%;
 }
 .skills-grid article:nth-child(4) .skill-line i {
-  width: 80%;
+  width: 63%;
 }
 .skills-grid article:nth-child(5) .skill-line i {
-  width: 58%;
+  width: 80%;
 }
 .skills-grid article:nth-child(6) .skill-line i {
+  width: 58%;
+}
+.skills-grid article:nth-child(7) .skill-line i {
   width: 75%;
 }
 @keyframes line-grow {
