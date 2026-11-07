@@ -50,7 +50,7 @@ function Skills() {
             My <em>skills.</em>
           </>
         }
-        subtitle="A snapshot of the areas I’m actively building competence in — not a claim that I know everything."
+        subtitle=""
       />
       <PageShell>
         <div className="skills-grid reveal">
