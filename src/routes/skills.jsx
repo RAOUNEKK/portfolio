@@ -15,17 +15,17 @@ const groups = [
     Shield,
     "01",
     "Cybersecurity",
-    ["Web security", "Pentesting", "Linux", "TryHackMe", "Security concepts"],
+    ["Web security", "Linux", "Cryptography", "Network security"],
   ],
-  [Code2, "02", "Web", ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Vite"]],
-  [Terminal, "03", "Programming", ["Python", "Java", "C", "SQL", "Algorithms"]],
+  [Code2, "02", "Web", ["HTML", "CSS", "JavaScript", "React", "TypeScript"]],
+  [Terminal, "03", "Programming", ["Python", "Java", "C"]],
   [
     Palette,
     "04",
     "UI / UX",
-    ["Figma", "Visual design", "Typography", "Prototyping", "Product thinking"],
+    ["Figma", "Visual design", "Prototyping", "Product thinking"],
   ],
-  [Database, "05", "Data & systems", ["PostgreSQL", "APIs", "Networking", "Linux systems"]],
+  [Database, "05", "Data & systems", ["PostgreSQL", "SQL", "NoSQL","REST","MongoDb"]],
   [Wrench, "06", "Tools", ["Git", "GitHub", "VS Code", "Docker", "Android tooling"]],
 ];
 function Skills() {
@@ -38,7 +38,7 @@ function Skills() {
             My <em>skills.</em>
           </>
         }
-        subtitle="A snapshot of the areas I’m actively building competence in — not a claim that I know everything."
+        subtitle=""
       />
       <PageShell>
         <div className="skills-grid reveal">
