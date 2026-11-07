@@ -57,7 +57,7 @@ function Home() {
                 RAOUNEK
               </h1>
               <div className="name-underline" />
-              <div className="name-note">NOUR ELYAKINE · SECURITY × AI × PRODUCT</div>
+              <div className="name-note">NOUR ELYAKINE · FULL STACK DEVELOPER</div>
             </div>
             <div className="hero-description">
               <p>

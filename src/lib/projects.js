@@ -260,6 +260,93 @@ export const projects = [
       "A live tool that connects the mathematics with the computation, showing algorithmic thinking and a clear interface for technical logic.",
     ),
   },
+  {
+    id: "amarel",
+    live: "https://amarel-shop.vercel.app/",
+    code: "https://github.com/RAOUNEKK/amarel",
+    title: "AMARÉL",
+    tagline: same(
+      "A full-stack online store for curated furniture, lighting and décor, with guest checkout and an owner dashboard.",
+    ),
+    description: same(
+      "Browse 42 products by category, search, save favourites and fill a cart, then place an order without creating an account. Delivery is priced by city, payment is cash on delivery, and an admin dashboard manages products, stock, photo uploads and order statuses.",
+    ),
+    tech: ["React", "TypeScript", "TanStack Start", "Redux Toolkit", "Node.js", "Express", "MongoDB"],
+    metrics: [
+      { label: same("Products"), value: "42" },
+      { label: same("Backend"), value: "Express + MongoDB" },
+      { label: same("Status"), value: "Live" },
+    ],
+    cover: "from-[color:var(--apricot)] to-[color:var(--green)]",
+    accent: "gold",
+    overview: same(
+      "AMARÉL is a demonstration store for warm, timeless pieces in furniture, lighting and décor, built end to end: a React storefront on top of its own REST API and MongoDB database.",
+    ),
+    problem: same(
+      "Small shops often lose customers at sign-up. Shoppers want to browse, fill a cart and order quickly, while the owner still needs a reliable way to manage stock and orders.",
+    ),
+    research: same(
+      "The flow follows how local shops actually sell: customers order without an account, delivery cost depends on the city, payment is cash on delivery and every order is confirmed by phone.",
+    ),
+    design: same(
+      "A warm, editorial look with natural materials, soft lighting and generous product photography. Category browsing, a new-arrivals section, search, favourites and a cart drawer keep shopping simple.",
+    ),
+    development: same(
+      "A React and TypeScript front end (TanStack Start, Redux Toolkit, Tailwind) talking over HTTP to a Node.js and Express REST API backed by MongoDB Atlas and Mongoose. Passwords are hashed with bcrypt, sessions use JWT, login attempts are rate limited and the admin routes are role protected.",
+    ),
+    challenges: same(
+      "Supporting guest checkout safely: orders have no account attached, so visitors track them with the order id plus the phone number used at checkout. Stock also has to drop on every order and return when an order is cancelled.",
+    ),
+    solution: same(
+      "Guest orders are remembered in the visitor's browser and their status is refreshed from the server. Delivery fees are computed from the city and shown in the final price, product photos are uploaded by the admin, resized in the browser and served by the API, and the admin dashboard updates order statuses and restores stock on cancellation.",
+    ),
+    results: same(
+      "A live, complete shop covering catalogue, cart, favourites, guest checkout, order tracking and an admin dashboard, with a documented API and a Postman collection. It shows full-stack architecture, REST API design and practical e-commerce thinking.",
+    ),
+  },
+  {
+    id: "securevote",
+    live: "https://voting-system-lovat-iota.vercel.app/",
+    title: "SecureVote",
+    tagline: same(
+      "A cryptographic e-voting prototype where ballots are verifiable, untraceable and counted exactly once.",
+    ),
+    description: same(
+      "Voters identify with a first code, cast an encrypted choice, confirm with a second code and receive a cryptographic receipt. Blind signatures and an anonymizer separate identity from ballot, and anyone can verify a vote and view the results.",
+    ),
+    tech: ["React", "Python", "RSA", "Blind signatures", "Cryptography"],
+    metrics: [
+      { label: same("Key length"), value: "RSA 2048" },
+      { label: same("Backend"), value: "Python" },
+      { label: same("Status"), value: "Live" },
+    ],
+    cover: "from-[color:var(--lavender)] to-[color:var(--berry)]",
+    accent: "lavender",
+    overview: same(
+      "SecureVote explores how an online election can protect both privacy and integrity: every vote can be checked, yet no one can link a ballot back to the voter who cast it.",
+    ),
+    problem: same(
+      "Electronic voting has to prove that each eligible person voted once and that the count is correct, without ever revealing who voted for whom. Those goals pull against each other.",
+    ),
+    research: same(
+      "The design is built on well-known primitives: RSA encryption, blind signatures, an anonymizing channel and a two-code identification scheme, with separate roles for the voter, the administrator who signs ballots and the counter authority.",
+    ),
+    design: same(
+      "A clear, terminal-inspired interface walks the voter through four steps (identify, vote, confirm, submit) with a dedicated page to verify a receipt and another for the results. Status indicators show the system and the anonymizer are online.",
+    ),
+    development: same(
+      "A React front end encrypts the choice on the client and a Python back end handles eligibility checks, blind signing, anonymized routing, encrypted storage and counting. The identification codes are never stored in plaintext.",
+    ),
+    challenges: same(
+      "Keeping identity and ballot completely unlinked while still preventing double voting and letting each voter verify that their own vote was counted.",
+    ),
+    solution: same(
+      "The ballot is blinded before the administrator signs it, so the signer never sees its content. It then travels through the anonymizer and is stored encrypted, and only the counter authority can tally the votes. The voter keeps a receipt to verify their vote later.",
+    ),
+    results: same(
+      "A live academic prototype that turns applied cryptography into a working full-stack application. It shows security engineering, protocol design and the ability to connect a React interface to a Python back end. It is a study build, not meant for real elections.",
+    ),
+  },
 ];
 export function getProject(id) {
   return projects.find((project) => project.id === id);

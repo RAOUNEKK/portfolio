@@ -14,7 +14,7 @@ Systems security
 
 ## Project description
 
-A personal portfolio website that presents who I am, the projects I have built, my skills, and a way to contact me. It is a responsive, multi-page site: Home, About, Projects (with a detail page for each project), Skills and Contact. The projects showcased include CyberLens, SWAP, Foliora, Piczzly, NutriAI and LP Solver.
+A personal portfolio website that presents who I am, the projects I have built, my skills, and a way to contact me. It is a responsive, multi-page site: Home, About, Projects (with a detail page for each project), Skills and Contact. The projects showcased include CyberLens, SWAP, Foliora, Piczzly, NutriAI, LP Solver, AMARÉL and SecureVote.
 
 ## Technologies used
 
